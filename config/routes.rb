@@ -3,7 +3,20 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   
-  #teacher routes
-  
+
+  resources :courses do
+    resources :modules, except: [:show] do
+      resources :lessons, except: [:show] do
+        resources :sections, except: [:show]
+      end
+
+      resources :questions, except: [:show] do
+        resources :answers, except: [:index, :show]
+      end
+    end
+    
+    resources :atributions, except: [:index, :show]
+    resources :requirements, except: [:index, :show]
+  end
 
 end
