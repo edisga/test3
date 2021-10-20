@@ -1,0 +1,2 @@
+class AtributionsController < ApplicationController
+end
