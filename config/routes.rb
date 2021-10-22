@@ -14,9 +14,6 @@ Rails.application.routes.draw do
         resources :answers, except: [:index, :show]
       end
     end
-    
-    resources :atributions, except: [:index, :show]
-    resources :requirements, except: [:index, :show]
   end
 
 end
