@@ -1,1 +1,65 @@
-// Specific CSS for your home-page
+// HEADER
+.home-page-header {
+  background-image: url('backgrounds_images/bg-boat.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  height: calc(100vh - 70px - 100px);
+
+  .max-1200 {
+    position: relative;
+  }
+
+  .header-text {
+    max-width: 600px;
+    padding: 25px;
+    position: absolute;
+    color: white;
+    top: 50%;
+    right: 5vw;
+    transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%); /* for IE 9 */
+    -webkit-transform: translate(0%, -50%); /* for Safari */
+  }
+}
+
+// HISTORICAL METRICS
+.historical-metrics {
+  background-color: #E4F9FF;
+  max-height: 100px;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 4vh;
+
+  p {
+    margin: 0px;
+  }
+}
+
+.historical-metrics-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+// METHODOLOGY
+.our-methodology, .our-courses {
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 4vh;
+}
+
+.our-methodology i {
+  font-size: 1.5rem;
+  color: #094C7E;
+  margin: 10px 0px;
+}
+
+.our-methodology-content {
+  padding: 15px 0px;
+}
+
+// OUR COURSES
+.our-courses-content {
+  display: flex;
+  justify-content: center;
+}
