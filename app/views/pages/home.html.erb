@@ -67,7 +67,7 @@
           <p><i class="fas fa-ship"></i> Hasta 8 metros de eslora</p>
           <p> Motos náuticas</p>
           <p><i class="fas fa-ruler"></i> Hasta 5 millas de puerto</p>
-          <button><%= link_to  "Empieza hoy", "#" %></button>
+          <button type="button" class="btn btn-primary"><%= link_to  "Empieza hoy", "#" %></button>
         </div>
       </div>
     </div>
@@ -82,49 +82,51 @@
           <p><i class="fas fa-ship"></i> Hasta 15 metros de eslora</p>
           <p> Motos náuticas</p>
           <p><i class="fas fa-ruler"></i> Hasta 12 millas de la costa</p>
-          <button><%= link_to  "Empieza hoy", "#" %></button>
+          <button type="button" class="btn btn-primary"><%= link_to  "Empieza hoy", "#" %></button>
         </div>
       </div>
     </div>
   </div>
 </section>
-<section class="out-students-say">
-  <div class="our-students-say-header">
-    <%= image_tag "icons/quote_mark.svg", :alt => "Comillas" %>
-    <h2>Qué opinan nuestros usuarios</h2>
-  </div>
-  <div class="row">
-    <div class="col-10 col-md-6 col-lg-4">
-      <div class="opinion-card">
-        <%= image_tag "icons/quote_mark.svg", size: "30x30", :alt => "Exam", :class => "comment-icon" %>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, sit necessitatibus. Quidem saepe beatae commodi aspernatur deleniti, quam veniam blanditiis fugit doloremque, sequi autem reprehenderit asperiores iste culpa laboriosam qui!</p>
-        <div class="person-opinion">
-          <%= image_tag "opinion/user.png" %>
+<section class="our-students-say">
+  <div class="max-1200">
+    <div class="our-students-say-header">
+      <%= image_tag "icons/quote_mark.svg", :alt => "Comillas" %>
+      <h2>Qué opinan nuestros usuarios</h2>
+    </div>
+    <div class="row scrolling-wrapper-md">
+      <div class="col-10 col-md-6 col-lg-4">
+        <div class="opinion-card">
+          <%= image_tag "icons/quote_mark.svg", size: "30x30", :alt => "Exam", :class => "comment-icon" %>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, sit necessitatibus. Quidem saepe beatae commodi aspernatur deleniti, quam veniam blanditiis fugit doloremque, sequi autem reprehenderit asperiores iste culpa laboriosam qui!</p>
+          <div class="person-opinion">
+            <%= image_tag "opinion/user.png" %>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-10 col-md-6 col-lg-4">
-      <div class="opinion-card">
-        <%= image_tag "icons/quote_mark.svg", size: "30x30", :alt => "Exam", :class => "comment-icon" %>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, sit necessitatibus. Quidem saepe beatae commodi aspernatur deleniti, quam veniam blanditiis fugit doloremque, sequi autem reprehenderit asperiores iste culpa laboriosam qui!</p>
-        <div class="person-opinion">
-          <%= image_tag "opinion/user.png" %>
+      <div class="col-10 col-md-6 col-lg-4">
+        <div class="opinion-card">
+          <%= image_tag "icons/quote_mark.svg", size: "30x30", :alt => "Exam", :class => "comment-icon" %>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, sit necessitatibus. Quidem saepe beatae commodi aspernatur deleniti, quam veniam blanditiis fugit doloremque, sequi autem reprehenderit asperiores iste culpa laboriosam qui!</p>
+          <div class="person-opinion">
+            <%= image_tag "opinion/user.png" %>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-10 col-md-6 col-lg-4">
-      <div class="opinion-card">
-        <%= image_tag "icons/quote_mark.svg", size: "30x30", :alt => "Exam", :class => "comment-icon" %>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, sit necessitatibus. Quidem saepe beatae commodi aspernatur deleniti, quam veniam blanditiis fugit doloremque, sequi autem reprehenderit asperiores iste culpa laboriosam qui!</p>
-        <div class="person-opinion">
-          <%= image_tag "opinion/user.png" %>
+      <div class="col-10 col-md-6 col-lg-4">
+        <div class="opinion-card">
+          <%= image_tag "icons/quote_mark.svg", size: "30x30", :alt => "Exam", :class => "comment-icon" %>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, sit necessitatibus. Quidem saepe beatae commodi aspernatur deleniti, quam veniam blanditiis fugit doloremque, sequi autem reprehenderit asperiores iste culpa laboriosam qui!</p>
+          <div class="person-opinion">
+            <%= image_tag "opinion/user.png" %>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 <section class="why-our-method">
-  <%= image_tag "backgrounds_images/procrastinating_monkey.jpg" %>
+  <!-- <%= image_tag "backgrounds_images/procrastinating_monkey.jpg" %> -->
   <div>
     <h2>¿Por qué 30 minutos al día?</h2>
     <p>Sabemos lo fácil que es despistarse, y más cuando estudias online. Por ello, sólo te pedimos 30 minutos de concentración al día:</p>

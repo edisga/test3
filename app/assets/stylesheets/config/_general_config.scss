@@ -1,9 +1,29 @@
-div {
-  border: solid 1px black;
-}
+// div {
+//   border: solid 1px black;
+// }
 
 .max-1200 {
   margin: auto;
   max-width: 1200px;
   height: 100%;
+}
+
+// Button color:
+button  a {
+  color: white !important;
+}
+
+// Scrolling wrapper
+.scrolling-wrapper-md::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 768px) {	
+  .scrolling-wrapper-md {
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
 }

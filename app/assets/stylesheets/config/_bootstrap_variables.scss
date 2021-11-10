@@ -17,11 +17,9 @@ $h4-font-size:   $font-size-base * 1.2 !default;
 $h5-font-size:   $font-size-base * 1.1 !default;
 $h6-font-size:   $font-size-base !default;
 
-$font-weight-lighter:         lighter !default;
-$font-weight-light:           300 !default;
-$font-weight-normal:          400 !default;
-$font-weight-bold:            800 !default;
-$font-weight-bolder:          bolder !default;
+$font-weight-regular: 500 !default;
+
+h2 { font-weight: 700 !important;}
 
 // Colors
 $body-color: $gray;
@@ -32,12 +30,14 @@ $danger:     $red;
 $warning:    $orange;
 
 // Buttons & inputs' radius
+$btn-font-weight: $font-weight-regular !default;
+
 $border:    5px;
 $border-lg: 10px;
 $border-sm: 2px;
 
 // Shadow
-// $box-shadow:       0 .5rem 1rem rgba($black, .15) !default;
+// $box-shadow: 0 .5rem 1rem rgba($black, .15) !default;
 // $box-shadow-sm:    0 .125rem .25rem rgba($black, .075) !default;
 // $box-shadow-lg:    0 1rem 3rem rgba($black, .175) !default;
 // $box-shadow-inset: inset 0 1px 2px rgba($black, .075) !default;
