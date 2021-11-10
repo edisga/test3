@@ -25,7 +25,7 @@
 
 // HISTORICAL METRICS
 .historical-metrics {
-  background-color: #E4F9FF;
+  background-color: $light-blue;
   max-height: 100px;
   text-align: center;
   padding: 20px;
@@ -62,4 +62,18 @@
 .our-courses-content {
   display: flex;
   justify-content: center;
+}
+
+// STUDENTS SAY
+.our-students-say {
+  background-color: $light-blue;
+  padding: 10vh 5vh;
+
+  .our-students-say-header {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 5vh;
+  }
+
+  
 }

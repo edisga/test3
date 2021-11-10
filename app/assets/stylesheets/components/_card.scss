@@ -2,6 +2,8 @@
 .course-card {
   border-radius: $border-lg;
   overflow: hidden;
+  box-shadow: $box-shadow;
+  margin-bottom: 5vh;
 
   .header-image {
     position: relative;
@@ -37,7 +39,17 @@
   }
 
   .body-card {
-    margin: 15px 0px 15px 0px;
+    margin-top: 15px;
     padding: 15px;
   }
+}
+
+
+// Opinion Card 
+.opinion-card {
+  background-color: white;
+  padding: 3vh;
+  box-shadow: $box-shadow;
+  border-radius: $border;
+  margin-bottom: 5vh;
 }
