@@ -6,13 +6,13 @@
 // General style
 $font-family-sans-serif:  $body-font;
 $headings-font-family:    $headers-font;
-$body-bg:                 $light-gray;
+$body-bg:                 white;
 $font-size-base: 1rem;
 
 // Font style
 $h1-font-size:   $font-size-base * 3 !default;
 $h2-font-size:   $font-size-base * 1.8 !default;
-$h3-font-size:   $font-size-base * 1.5 !default;
+$h3-font-size:   $font-size-base * 1.4 !default;
 $h4-font-size:   $font-size-base * 1.2 !default;
 $h5-font-size:   $font-size-base * 1.1 !default;
 $h6-font-size:   $font-size-base !default;
@@ -22,7 +22,7 @@ $font-weight-regular: 500 !default;
 h2 { font-weight: 700 !important; }
 
 // Colors
-$body-color: $gray;
+$body-color: $black;
 $primary:    $blue;
 $success:    $green;
 $info:       $yellow;
