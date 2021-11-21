@@ -29,7 +29,7 @@
   <div class="row">
     <div class="col-12 col-md-3">
       <div class="our-methodology-content">
-        <%= image_tag "icons/film-icon.svg", size: "50x50", :alt => "Vídeo" %>
+        <%= image_path "icons/film-icon.svg", size: "50x50", :alt => "Vídeo" %>
         <h4>Vídeos de 5 minutos</h4>
         <p>Sabemos que te distraes fácilmente, así que hemos preparado vídeos de 5 minutos para que entiendas los conceptos de navegación sin despistarte.</p>
       </div>
@@ -37,7 +37,7 @@
     <div class="col d-flex align-items-center justify-content-center"><i class="fas fa-plus"></i></div>
     <div class="col-12 col-md-4">
       <div class="our-methodology-content">
-        <%= image_tag "icons/test-icon.svg", size: "50x50", :alt => "Test" %>
+        <%= image_path "icons/test-icon.svg", size: "50x50", :alt => "Test" %>
         <h4>Un test diferente cada día</h4>
         <p>Hemos diseñado una nueva metodología donde personalizamos tu test diariamente, adaptándolo a lo que has aprendido hasta ese día. Así, cada día tendrás un test diferente, de conceptos nuevos + todos los temas que ya has estudiado.</p>
       </div>
@@ -45,7 +45,7 @@
     <div class="col d-flex align-items-center justify-content-center"><i class="fas fa-plus"></i></div>
     <div class="col-12 col-md-3">
       <div class="our-methodology-content">
-        <%= image_tag "icons/exam-icon.svg", size: "50x50", :alt => "Exam" %>
+        <%= image_path "icons/exam-icon.svg", size: "50x50", :alt => "Exam" %>
         <h4>Exámenes reales</h4>
         <p>Exámenes oficiales ordenados por Comunidades Autónomas, que puedes rellenar y corregir online.</p>
       </div>
@@ -58,7 +58,7 @@
   <div class="row our-courses-content">
     <div class="col-12 col-md-6 col-lg-4">
       <div class="course-card">
-        <div class="header-image" style="background-image: url('assets/backgrounds_images/bg-pnb-course.png');">
+        <div class="header-image" style="background-image: image-url('assets/backgrounds_images/bg-pnb-course.png');">
           <p class="course-price">79€</p>
           <p class="course-title">P.N.B</p>
         </div>
@@ -73,7 +73,7 @@
     </div>
     <div class="col-12 col-md-6 col-lg-4">
       <div class="course-card">
-        <div class="header-image" style="background-image: url('assets/backgrounds_images/bg-per-course.png');">
+        <div class="header-image" style="background-image: image-url('assets/backgrounds_images/bg-per-course.png');">
           <p class="course-price">99€</p>
           <p class="course-title">P.E.R</p>
         </div>
@@ -91,34 +91,34 @@
 <section class="our-students-say">
   <div class="max-1200">
     <div class="our-students-say-header">
-      <%= image_tag "icons/quote_mark.svg", :alt => "Comillas" %>
+      <%= image_path "icons/quote_mark.svg", :alt => "Comillas" %>
       <h2>Qué opinan nuestros usuarios</h2>
     </div>
     <div class="row scrolling-wrapper-md">
       <div class="col-10 col-md-6 col-lg-4">
         <div class="opinion-card">
-          <%= image_tag "icons/quote_mark.svg", size: "30x30", :alt => "Exam", :class => "comment-icon" %>
+          <%= image_path "icons/quote_mark.svg", size: "30x30", :alt => "Exam", :class => "comment-icon" %>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, sit necessitatibus. Quidem saepe beatae commodi aspernatur deleniti, quam veniam blanditiis fugit doloremque, sequi autem reprehenderit asperiores iste culpa laboriosam qui!</p>
           <div class="person-opinion">
-            <%= image_tag "opinion/user.png" %>
+            <%= image_path "opinion/user.png" %>
           </div>
         </div>
       </div>
       <div class="col-10 col-md-6 col-lg-4">
         <div class="opinion-card">
-          <%= image_tag "icons/quote_mark.svg", size: "30x30", :alt => "Exam", :class => "comment-icon" %>
+          <%= image_path "icons/quote_mark.svg", size: "30x30", :alt => "Exam", :class => "comment-icon" %>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, sit necessitatibus. Quidem saepe beatae commodi aspernatur deleniti, quam veniam blanditiis fugit doloremque, sequi autem reprehenderit asperiores iste culpa laboriosam qui!</p>
           <div class="person-opinion">
-            <%= image_tag "opinion/user.png" %>
+            <%= image_path "opinion/user.png" %>
           </div>
         </div>
       </div>
       <div class="col-10 col-md-6 col-lg-4">
         <div class="opinion-card">
-          <%= image_tag "icons/quote_mark.svg", size: "30x30", :alt => "Exam", :class => "comment-icon" %>
+          <%= image_path "icons/quote_mark.svg", size: "30x30", :alt => "Exam", :class => "comment-icon" %>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, sit necessitatibus. Quidem saepe beatae commodi aspernatur deleniti, quam veniam blanditiis fugit doloremque, sequi autem reprehenderit asperiores iste culpa laboriosam qui!</p>
           <div class="person-opinion">
-            <%= image_tag "opinion/user.png" %>
+            <%= image_path "opinion/user.png" %>
           </div>
         </div>
       </div>
@@ -129,7 +129,7 @@
   <div class="max-1200">
     <div class="row align-items-center">
       <div class="why-our-method-image col-12 col-md-6 order-12 order-lg-1">
-        <%= image_tag "backgrounds_images/procrastinating_monkey.jpg" %>
+        <%= image_path ('backgrounds_images/procrastinating_monkey.jpg') %>
       </div>
       <div class="why-our-method-content col-12 col-md-6 order-1 order-lg-12">
         <h2>¿Por qué 30 minutos al día?</h2>

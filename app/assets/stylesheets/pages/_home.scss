@@ -1,6 +1,6 @@
 // HEADER
 .home-page-header {
-  background-image: url('backgrounds_images/bg-boat.png');
+  background-image: image-url('backgrounds_images/bg-boat.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -145,7 +145,7 @@
 
 // WORK WITH US
 .work-with-us {
-  background-image: url('backgrounds_images/bg-work-with-us.jpg');
+  background-image: image-url('backgrounds_images/bg-work-with-us.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
