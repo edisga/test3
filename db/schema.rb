@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_28_204917) do
+ActiveRecord::Schema.define(version: 2021_11_29_122531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 2021_10_28_204917) do
     t.bigint "teacher_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "price"
+    t.string "abbreviation"
     t.index ["teacher_id"], name: "index_courses_on_teacher_id"
   end
 
@@ -51,6 +53,16 @@ ActiveRecord::Schema.define(version: 2021_10_28_204917) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "order"
     t.index ["course_id"], name: "index_moduls_on_course_id"
+  end
+
+  create_table "paid_courses", force: :cascade do |t|
+    t.boolean "paid"
+    t.bigint "user_id", null: false
+    t.bigint "course_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["course_id"], name: "index_paid_courses_on_course_id"
+    t.index ["user_id"], name: "index_paid_courses_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -112,6 +124,8 @@ ActiveRecord::Schema.define(version: 2021_10_28_204917) do
   add_foreign_key "answers", "questions"
   add_foreign_key "courses", "teachers"
   add_foreign_key "lessons", "moduls"
+  add_foreign_key "paid_courses", "courses"
+  add_foreign_key "paid_courses", "users"
   add_foreign_key "questions", "lessons"
   add_foreign_key "sections", "lessons"
 end
