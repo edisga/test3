@@ -1,0 +1,16 @@
+<h1>Nuestros cursos</h1>
+
+<%= link_to "Volver a inicio", root_path %>
+
+<div class="course-list">
+  <% @courses.each do |course| %>
+    <%= link_to course_path(course) do %>
+      <div class="course">
+        <h2><%= course.title %></h2>
+        <p><%= course.description %></p>
+        <h4><%= course.teacher.name %></h4>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
