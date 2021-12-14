@@ -4,4 +4,6 @@
 
 <p><%= @course.description %></p>
 
+<%= link_to "Ver modulos", course_moduls_path(@course) %>
+
 <h4>Teacher: <%= @course.teacher.name %></h4>

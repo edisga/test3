@@ -44,7 +44,9 @@ courses.each do |course_title|
     title: course_title,
     description: "Con el título de PNB Patrón de Navegación Básica podrás gobernar embarcaciones de hasta 8 metros de eslora y navegar hasta una distancia máxima de la costa de cinco millas.",
     duration: 6,
-    teacher: teacher
+    teacher: teacher,
+    price: 150,
+    abbreviation: "P.E.R"
   )
   course.save!
   puts "#{course.title} created!"

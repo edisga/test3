@@ -1,1 +1,12 @@
-<h1><%= @modul.title %></h1>
+<h1><%= @course.title %></h1>
+
+<% if teacher_signed_in? %>
+  <button class = "btn btn-primary"><%= link_to "Crear nuevo módulo", new_course_modul_path %></button>
+<% end %>
+
+<% @moduls.each do |modul| %>
+  <h2><%= modul.title %></h2>
+  <% modul.lessons.each do |lesson| %>
+    <h4><%= lesson.title %></h4>
+  <% end %>
+<% end %>

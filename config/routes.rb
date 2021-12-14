@@ -5,13 +5,13 @@ Rails.application.routes.draw do
   
 
   resources :courses do
-    resources :modules, except: [:show] do
-      resources :lessons, except: [:show] do
-        resources :sections, except: [:show]
+    resources :moduls, except: [:show] do
+      resources :lessons, except: [:index] do
+        # resources :sections, except: [:show]
 
-        resources :questions, except: [:show] do
-          resources :answers, except: [:index, :show]
-        end
+        # resources :questions, except: [:show] do
+        #   resources :answers, except: [:index, :show]
+        # end
       end
     end
   end
