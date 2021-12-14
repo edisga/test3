@@ -1,0 +1,23 @@
+.user-login {
+  position: relative;
+  .row {
+    min-height: calc(100vh - 70px);
+  }
+}
+
+.user-login-image {
+  background-image: image_url('devise/login-user.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.user-login-form {
+  position: absolute;
+  width: 80%;
+  max-width: 600px;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
