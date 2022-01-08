@@ -1,0 +1,18 @@
+<div class="container">
+  <h4>Hola de nuevo <%= @teacher.name %></h4>
+
+  <h1>Tus cursos</h1>
+  <div class="teacher-courses">
+    <% @courses.each do |course| %>
+      <%= link_to course_moduls_path(course) do %>
+        <div class="teacher-course-card">
+          <div class="image"></div>
+          <div class="course-content">
+            <h3><%= course.title %></h3>
+            <p><%= course.abbreviation %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
