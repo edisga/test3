@@ -19,12 +19,13 @@ Rails.application.routes.draw do
     resources :moduls, except: [:show] do
       resources :lessons, except: [:index, :new, :edit] do
         resources :sections, except: [:index]
+      end
 
-        resources :questions, except: [:show] do
-          resources :answers, except: [:index, :show]
-        end
+      resources :questions, except: [:show] do
+        resources :answers, except: [:index, :show, :new, :edit]
       end
     end
   end
+
 
 end

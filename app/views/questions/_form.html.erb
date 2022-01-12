@@ -1,0 +1,11 @@
+<%= simple_form_for [@course, @modul, @question] do |f| %>
+  <%= f.input :title, label: 'Título de la pregunta' %>
+  <%= f.input :state, label: 'Provincia' %>
+  <%= f.input :year, label: 'Año' %>
+
+  <%= f.simple_fields_for :answers do |p| %>
+    <%= p.input :answer, label: 'Respuesta' %>
+    <%= p.input :correct_answer, laber: 'Correcta' %>
+  <% end %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>

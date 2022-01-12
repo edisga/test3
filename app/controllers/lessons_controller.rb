@@ -1,6 +1,6 @@
 class LessonsController < ApplicationController
   before_action :find_lesson, only: [:show, :edit, :update, :destroy]
-  before_action :find_module, only: [:show, :edit, :update, :create, :destroy]
+  before_action :find_modul, only: [:show, :edit, :update, :create, :destroy]
   before_action :find_course, only: [:show, :edit, :update, :create, :destroy]
   
   def create
@@ -39,7 +39,7 @@ class LessonsController < ApplicationController
     @lesson = Lesson.find(params[:id])
   end
 
-  def find_module
+  def find_modul
     @modul = Modul.find(params[:modul_id])
   end
 

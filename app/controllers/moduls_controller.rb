@@ -56,6 +56,6 @@ class ModulsController < ApplicationController
   end
 
   def modul_params
-    params.require(:modul).permit(:title, :download_document, :order)
+    params.require(:modul).permit(:title, :download_document, :upload_document, :order)
   end
 end
