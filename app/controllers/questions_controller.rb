@@ -8,18 +8,13 @@ class QuestionsController < ApplicationController
   
   def new
     @question = Question.new
-    @question.answers.new
-    @question.answers.new
-    @question.answers.new
-    @question.answers.new
+    4.times { @question.answers.build }
   end
   
   def create
-    raise
     @question = Question.new(question_params)
     if @question.save
-      @question.answers.save
-      redirect_to course_modul_questions(@course, @modul), notice: 'Pregunta añadida correctamente'
+      redirect_to new_course_modul_question_path(@course, @modul), notice: 'Pregunta añadida correctamente'
     else
       render action: :new, notice: 'Se ha producido un error'
     end
@@ -51,7 +46,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:title, :state, :year, answers_attributes: [:answer, :correct_answer])
+    params.require(:question).permit(:title, :state, :year, :lesson_id, answers_attributes: [:id, :answer, :correct_answer])
   end
 
   def find_course

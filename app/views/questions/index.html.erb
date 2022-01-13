@@ -1,9 +1,9 @@
 <h1>Preguntas de examen</h1>
 
-<%= @questions.each do |question| %>
+<% @questions.each do |question| %>
   <h3><%= question.title %></h3>
-  <%= question.answer.each do |answer| %>
-    <p><%= answer %></p>
+  <% question.answers.each do |answer| %>
+    <p><%= answer.answer %></p>
   <% end %>
 <% end %>
 
