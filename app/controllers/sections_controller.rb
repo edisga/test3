@@ -12,18 +12,19 @@ class SectionsController < ApplicationController
     @section = Section.new(section_params)
     @section.lesson = @lesson
     if @section.save
-      redirect_to course_modul_lesson_section_path(@course, @modul, @lesson, @section), notice: 'Clase creada correctamente'
+      redirect_to edit_course_modul_lesson_section_path(@course, @modul, @lesson, @section), notice: 'Clase creada correctamente'
     else
       redirect_to course_modul_lesson_path(@course, @modul, @lesson), notice: 'Se ha producido un error'
     end
   end
 
   def edit
+    @element = @section.elements.build
   end
 
   def update
     if @section.update(section_params)
-      redirect_to course_modul_lesson_section_path(@course, @modul, @lesson, @section), notice: 'Clase actualizada correctamente'
+      redirect_to edit_course_modul_lesson_section_path(@course, @modul, @lesson, @section), notice: 'Clase actualizada correctamente'
     else
       render 'edit', notice: 'Se ha producido un error'
     end

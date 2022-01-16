@@ -3,6 +3,7 @@ class QuestionsController < ApplicationController
   before_action :find_course, only: [:new, :create, :update, :destroy]
   before_action :find_modul, only: [:new, :create]
   def index
+    # TODO: Include question to optimize load page
     @questions = Question.all
   end
   

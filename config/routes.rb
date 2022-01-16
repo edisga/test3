@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   resources :courses do
     resources :moduls, except: [:show] do
       resources :lessons, except: [:index, :new, :edit] do
-        resources :sections, except: [:index]
+        resources :sections, except: [:index] do
+          resources :elements, only: [:create, :update, :destroy]
+        end
       end
 
       resources :questions, except: [:show] do

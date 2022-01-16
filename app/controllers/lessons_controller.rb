@@ -9,7 +9,7 @@ class LessonsController < ApplicationController
     if @lesson.save
       redirect_to course_modul_lesson_path(@course, @modul, @lesson), notice: 'Lección creada correctamente'
     else
-      redirect_to course_moduls_path(@course), notice: 'Se ha producido un error'
+      redirect_to course_moduls_path(@course), alert: 'Se ha producido un error'
     end
   end
 

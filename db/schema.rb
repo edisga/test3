@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_08_104035) do
+ActiveRecord::Schema.define(version: 2022_01_16_120522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,15 @@ ActiveRecord::Schema.define(version: 2022_01_08_104035) do
     t.float "price"
     t.string "abbreviation"
     t.index ["teacher_id"], name: "index_courses_on_teacher_id"
+  end
+
+  create_table "elements", force: :cascade do |t|
+    t.string "element_type"
+    t.bigint "section_id", null: false
+    t.integer "position"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["section_id"], name: "index_elements_on_section_id"
   end
 
   create_table "lessons", force: :cascade do |t|
@@ -146,6 +155,7 @@ ActiveRecord::Schema.define(version: 2022_01_08_104035) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "answers", "questions"
   add_foreign_key "courses", "teachers"
+  add_foreign_key "elements", "sections"
   add_foreign_key "lessons", "moduls"
   add_foreign_key "paid_courses", "courses"
   add_foreign_key "paid_courses", "users"
