@@ -31,10 +31,17 @@
         <% @section.elements.each do |element| %>
           <div class="mb-3">
             <% if element.persisted? %>
-              <%= form_with(model: [@course, @modul, @lesson, @section, element]) do |f| %>
-                <%= f.rich_text_area :content %>
-                <%= f.submit "Guardar", class: "btn btn-primary" %>
-              <% end %>
+              <div class="mb-3">
+                <div class="paragraph-content">
+                
+                </div>
+                <div class="paragraph-form">
+                  <%= form_with(model: [@course, @modul, @lesson, @section, element]) do |f| %>
+                    <%= f.rich_text_area :content %>
+                    <%= f.submit "Guardar", class: "btn btn-primary" %>
+                  <% end %>
+                </div>
+              </div>
             <% end %>
           </div>
         <% end %>
