@@ -13,4 +13,8 @@ class Element < ApplicationRecord
   def image?
     element_type == 'image'
   end
+
+  def video?
+    element_type == 'video-embed'
+  end
 end

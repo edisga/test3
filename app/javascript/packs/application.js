@@ -38,7 +38,7 @@ require("@rails/actiontext")
 
 document.addEventListener('turbolinks:load', () => {
   document.addEventListener('click', () => {
-    let element = event.target.closest('.text-content')
+    let element = event.target.closest('.paragraph-content')
     if (!element) return;
 
     element.classList.add('d-none')
@@ -50,7 +50,7 @@ document.addEventListener('turbolinks:load', () => {
 
     event.preventDefault();
 
-    let element = event.target.closest('.form-content')
+    let element = event.target.closest('.paragraph-form')
 
     element.classList.add('d-none')
     element.previousElementSibling.classList.remove('d-none')

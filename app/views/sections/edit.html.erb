@@ -15,100 +15,90 @@
     <div class="mb-3">
       <%= form_with(model: [@course, @modul, @lesson, @section, @element], html: { class: 'float-left mr-1' }) do |form| %>
         <%= form.hidden_field :element_type, value: 'paragraph' %>
+        <%= form.hidden_field :video, value: nil %>
         <%= button_tag(type: 'submit', class: 'btn btn-secondary') do %>
           <i class="fas fa-paragraph"></i>
         <% end %>
       <% end %>
-      <%= form_with(model: [@course, @modul, @lesson, @section, @element]) do |form| %>
+      <%= form_with(model: [@course, @modul, @lesson, @section, @element], html: { class: 'float-left mr-1' }) do |form| %>
         <%= form.hidden_field :element_type, value: 'image' %>
+        <%= form.hidden_field :video, value: nil %>
         <%= button_tag(type: 'submit', class: 'btn btn-secondary') do %>
           <i class="fas fa-image"></i>
         <% end %>
       <% end %>
+      <%= form_with(model: [@course, @modul, @lesson, @section, @element]) do |form| %>
+        <%= form.hidden_field :element_type, value: 'video-embed' %>
+        <%= button_tag(type: 'submit', class: 'btn btn-secondary') do %>
+          <i class="fas fa-video"></i>
+        <% end %>
+      <% end %>
     </div>
     <div class="card mb-5">
-    <div class="card-body pt-5">
+      <div class="card-body pt-5">
         <% @section.elements.each do |element| %>
-          <div class="mb-3">
-            <% if element.persisted? %>
-              <div class="mb-3">
+          <% if element.persisted? %>
+            <% if element.paragraph? %>
+              <div class="mb-3 p-3 paragraph">
                 <div class="paragraph-content">
-                
+                  <% if element.content.present?%>
+                    <%= element.content %>
+                  <% else %>
+                    Click to add content.
+                  <% end %>
                 </div>
-                <div class="paragraph-form">
+                <div class="paragraph-form d-none">
                   <%= form_with(model: [@course, @modul, @lesson, @section, element]) do |f| %>
                     <%= f.rich_text_area :content %>
-                    <%= f.submit "Guardar", class: "btn btn-primary" %>
+                    <div class="mt-3">
+                      <%= f.submit "Guardar", class: "btn btn-primary" %>
+                      <a href="#" class="cancel btn btn-secondary">Cancelar</a>
+                    </div>
+                    <%= link_to course_modul_lesson_section_element_path(@course, @modul, @lesson, @section, element), method: :delete, class: 'delete-btn btn btn-dark mt-2 float-right', data: { confirm: "¿Deseas eliminar el texto?" } do %>
+                      <i class='fas fa-times'></i>
+                    <% end %>
                   <% end %>
                 </div>
               </div>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-      <!--
-      <div class="card-body pt-5" data-controller="elements">
-        <% if @section.elements.none? { |element| element.persisted? } %>
-          <div class="p-4 text-center">
-            <h2 class='text-secondary'>
-              <i class="fas fa-lightbulb"></i>
-            </h2>
-            <p>Clica los elementos de arriba para añadir un elemento</p>
-          </div>
-        <% else %>
-          <ul id='elements' data-action="drop->elements#sort">
-            <% @section.elements.order(position: :asc).each do |element| %>
-              <% if element.persisted? %>
-                <li data-id="<%= element.id %>" class='element-item'>
-                  <% if element.paragraph? %>
-                    <div class="mb-4 p-3 paragraph">
-                      <div class="paragraph-content">
-                        <% if element.content.present? %>
-                          <%= element.content %>
-                        <% else %>
-                          Click to add content.
-                        <% end %>
-                      </div>
-                      <div class="paragraph-form d-none" id='element-<%= element.id %>-form'>
-                        <%= form_with(model: [@course, @modul, @lesson, @section, @element]) do |form| %>
-                          <%= form.rich_text_area :content, id: "element_content_#{element.id}" %>
-                          <div class="mt-3 d-flex justify-content-between">
-                            <div>
-                              <%= form.submit "Guardar", class: 'btn btn-primary' %>
-                              <a href="#" class='cancel btn btn-secondary'>Cancelar</a>
-                            </div>
-                            <%= link_to 'Eliminar', course_modul_lesson_section_element_path(@course, @modul, @lesson, @section, element), method: :delete, class: 'btn btn-danger', data: { confirm: "¿Estás seguro?" } %>
-                          </div>
-                        <% end %>
-                      </div>
-                    </div>
-                  <% elsif element.image? %>
-                    <div class="mb-4 p-3 image">
-                      <% if element.image.present? %>
-                        <%= link_to course_modul_lesson_section_element_path(@course, @modul, @lesson, @section, element), method: :delete, class: 'delete-btn btn btn-dark mt-2 float-right', data: { confirm: "¿Estás seguro?" } do %>
-                          <i class='fas fa-times'></i>
-                        <% end %>
-                        <%= image_tag(element.image) %>
-                      <% else %>
-                        <%= form_with(model: [@course, @modul, @lesson, @section, element]) do |form| %>
-                          <%= form.file_field :image %>
-                          <div class="mt-3">
-                            <%= form.submit "Guardar", class: 'btn btn-primary' %>
-                            <a href="#" class='cancel btn btn-secondary'>Cancelar</a>
-                          </div>
-                        <% end %>
-                      <% end %>
+            <% elsif element.image? %>
+              <div class="mb-4 p-3 image">
+                <% if element.image.present? %>
+                  <%= link_to course_modul_lesson_section_element_path(@course, @modul, @lesson, @section, element), method: :delete, class: 'delete-btn btn btn-dark mt-2 float-right', data: { confirm: "¿Deseas eliminar la imágen?" } do %>
+                    <i class='fas fa-times'></i>
+                  <% end %>
+                  <%= image_tag(element.image) %>
+                <% else %>
+                  <%= form_with(model: [@course, @modul, @lesson, @section, element]) do |form| %>
+                    <%= form.file_field :image %>
+                    <div class="mt-3">
+                      <%= form.submit "Guardar", class: 'btn btn-primary' %>
+                      <a href="#" class='cancel btn btn-secondary'>Cancelar</a>
                     </div>
                   <% end %>
                 <% end %>
-              </li>
+              </div>
+            <% else element.video? %>
+              <div class="mb-4 p-3 video">
+                <% if element.video.present? %>
+                  <%= link_to course_modul_lesson_section_element_path(@course, @modul, @lesson, @section, element), method: :delete, class: 'delete-btn btn btn-dark mt-2 float-right', data: { confirm: "¿Deseas eliminar la imágen?" } do %>
+                    <i class='fas fa-times'></i>
+                  <% end %>
+                  <%= element.video.html_safe %>
+                <% else %>
+                  <%= form_with(model: [@course, @modul, @lesson, @section, element]) do |form| %>
+                    <%= form.text_area :video %>
+                    <div class="mt-3">
+                      <%= form.submit "Guardar", class: 'btn btn-primary' %>
+                      <a href="#" class='cancel btn btn-secondary'>Cancelar</a>
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
             <% end %>
-          </ul>
+          <% end %>
         <% end %>
       </div>
-      -->
     </div>
   </div>
 </div>
-
 </div>
