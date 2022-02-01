@@ -77,12 +77,13 @@ courses.each do |course_title|
 
       puts "Adding sections..."
       8.times do
-      section = Section.new(
-        title: Faker::Book.title,
-        description: Faker::Lorem.paragraph,
-        favorite_class: [true, false, false, false].sample,
-        lesson: lesson
-      )
+        section = Section.new(
+          title: Faker::Book.title,
+          description: Faker::Lorem.paragraph,
+          favorite_class: [true, false, false, false].sample,
+          lesson: lesson
+        )
+        section.save!
       end
 
       puts "Adding questions..."

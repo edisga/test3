@@ -1,0 +1,13 @@
+<h1><%= @lesson.title %></h1>
+<%# TODO: Editar lección %>
+<%= link_to course_modul_lesson_path(@course, @modul, @lesson),  method: :delete, data: { confirm: "¿Estás seguro que quieres eliminar la lección #{@lesson.title}?"}, class: "delete-course" do %>
+  <i class="fas fa-trash-alt"></i> Eliminar lección
+<% end %>
+
+<button class="btn btn-primary"><%= link_to "Crear nueva clase", new_course_modul_lesson_section_path(@course, @modul, @lesson, @section) %></button>
+
+<% @sections.each do | section | %>
+  <%= link_to course_modul_lesson_section_path(@course, @modul, @lesson, section) do %>
+    <h2><%= section.title %></h2>
+  <% end %>
+<% end %>

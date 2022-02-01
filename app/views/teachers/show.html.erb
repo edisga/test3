@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Tu perfil</h1>
+  <%= link_to "Editar perfil", edit_teacher_path(@teacher) %>
+  <p><strong>Nombre:</strong> <%= @teacher.name %></p>
+  <p><strong>Apellido:</strong> <%= @teacher.last_name %></p>
+  <p><strong>Email:</strong> <%= @teacher.email %></p>
+  <p><strong>Descripción:</strong> <%= @teacher.description %></p>
+</div>

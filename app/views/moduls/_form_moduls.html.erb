@@ -1,0 +1,7 @@
+<%= simple_form_for [@course, @modul] do |f| %>
+  <%= f.input :title, placeholder: "Título del módulo" %>
+  <%= f.input :download_document, placeholder: "Inserte la url de descarga" %>
+  <%= f.input :upload_document, label: 'text' %>
+  <%= f.input :order, label: 'Orden' %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,4 @@
+<%= simple_form_for [@course, modul, @lesson] do |f| %>
+  <%= f.input :title, label: 'Título de la lección' %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>

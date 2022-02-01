@@ -1,0 +1,6 @@
+<%= simple_form_for [@course, @modul, @lesson, @section] do |f| %>
+  <%= f.input :title, label: 'Título de la sección' %>
+  <%= f.input :description, label: 'Descripción' %>
+  <%= f.input :text, label: 'text', :data => {:provide => "markdown"} %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>

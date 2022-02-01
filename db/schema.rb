@@ -10,10 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_29_122531) do
+ActiveRecord::Schema.define(version: 2022_01_30_201939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "action_text_rich_texts", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "body"
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+  end
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
 
   create_table "answers", force: :cascade do |t|
     t.boolean "correct_answer"
@@ -34,6 +65,16 @@ ActiveRecord::Schema.define(version: 2021_11_29_122531) do
     t.float "price"
     t.string "abbreviation"
     t.index ["teacher_id"], name: "index_courses_on_teacher_id"
+  end
+
+  create_table "elements", force: :cascade do |t|
+    t.string "element_type"
+    t.bigint "section_id", null: false
+    t.integer "position"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "video"
+    t.index ["section_id"], name: "index_elements_on_section_id"
   end
 
   create_table "lessons", force: :cascade do |t|
@@ -82,6 +123,7 @@ ActiveRecord::Schema.define(version: 2021_11_29_122531) do
     t.bigint "lesson_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "text"
     t.index ["lesson_id"], name: "index_sections_on_lesson_id"
   end
 
@@ -121,8 +163,10 @@ ActiveRecord::Schema.define(version: 2021_11_29_122531) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "answers", "questions"
   add_foreign_key "courses", "teachers"
+  add_foreign_key "elements", "sections"
   add_foreign_key "lessons", "moduls"
   add_foreign_key "paid_courses", "courses"
   add_foreign_key "paid_courses", "users"

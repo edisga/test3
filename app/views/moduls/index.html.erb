@@ -1,12 +1,37 @@
 <h1><%= @course.title %></h1>
+<%= link_to "Editar curso", edit_course_path(@course) %>
+<%= link_to course_path(@course),  method: :delete, data: { confirm: "¿Estás seguro que quieres eliminar el curso #{@course.title}"}, class: "delete-course" do %>
+  <i class="fas fa-trash-alt"></i> Eliminar curso
+<% end %>
 
 <% if teacher_signed_in? %>
-  <button class = "btn btn-primary"><%= link_to "Crear nuevo módulo", new_course_modul_path %></button>
+  <button class="btn btn-primary"><%= link_to "Crear nuevo módulo", new_course_modul_path %></button>
 <% end %>
 
 <% @moduls.each do |modul| %>
-  <h2><%= modul.title %></h2>
+  <h2><%= modul.order %> - <%= modul.title %></h2>
+  <button class="btn btn-primary"><%= link_to "Añadir pregunta de examen", new_course_modul_question_path(@course, modul) %></button> 
+  <%= link_to "Cambiar", edit_course_modul_path(@course, modul) %>
+  <%= link_to course_modul_path(@course, modul), method: :delete, data: { confirm: "¿Estás seguro que quieres eliminar el módulo #{modul.title}?"}, class: "delete-modul" do %>
+    <i class="fas fa-trash-alt"></i> Eliminar módulo
+  <% end %>
+
+  <%= render 'form_lessons', modul: modul %>
+
+  <%# This line is to open document in a new tab %>
+  <!--
+  <%= link_to modul.upload_document, target: :_blank do %>
+    <%= image_tag "icons/download_document.png" %>
+  <% end %>
+  -->
+  <%# THis line is to download document when you click it %>
+  <%= link_to rails_blob_path(modul.upload_document, disposition: :attachment) do %>
+    <%= image_tag "icons/download_document.png" %>
+  <% end %>
+
   <% modul.lessons.each do |lesson| %>
-    <h4><%= lesson.title %></h4>
+    <%= link_to course_modul_lesson_path(@course, modul, lesson) do %>
+      <h4><%= lesson.title %></h4>
+    <% end %>
   <% end %>
 <% end %>

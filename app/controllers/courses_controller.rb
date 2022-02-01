@@ -1,6 +1,7 @@
 class CoursesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show, :new, :edit, :update, :delete, :create]
-  before_action :find_course, only: [:show, :edit, :update, :delete]
+  # skip_before_action :authenticate_user!
+  # skip_before_action :authenticate_teacher!, only: [:index, :show]
+  before_action :find_course, only: [:show, :edit, :update, :destroy]
 
   def index
     @courses = Course.all
@@ -9,7 +10,7 @@ class CoursesController < ApplicationController
   def new
     @course = Course.new
   end
-  
+
   def create
     @course = Course.new(course_params)
     @course.teacher = current_teacher
@@ -18,13 +19,6 @@ class CoursesController < ApplicationController
     else
       render 'new', notice: 'Se ha producido un error'
     end
-    # if @course.save
-    #   flash[:success] = "Curso creado correctamente"
-    #   redirect_to course_moduls_path(@course)
-    # else
-    #   flash[:error] = "Se ha producido un error"
-    #   render 'new'
-    # end
   end
   
   def edit
@@ -32,8 +26,7 @@ class CoursesController < ApplicationController
   
   def update
     if @course.update(course_params)
-      flash[:success] = "Se ha actualizado correctamente"
-      redirect_to course_moduls_path(@course)
+      redirect_to course_moduls_path(@course), notice: 'Curso actualizado correctamente'
     else
       flash[:error] = "Se ha producido un error"
       render 'index'
@@ -45,10 +38,10 @@ class CoursesController < ApplicationController
   end
   
   def destroy
-    if course.destroy
-      redirect_to courses_path, notice: "El curso se ha eliminado correctamente"
+    if @course.destroy
+      redirect_to my_courses_teacher_path, notice: "El curso se ha eliminado correctamente"
     else
-      redirect_to buckets_path, notice: "Parece que tenemos problemas para eliminar el curso, inténtalo otra vez."
+      redirect_to my_courses_teacher_path, notice: "Se ha producido un error"
     end
   end
 
