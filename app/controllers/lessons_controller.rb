@@ -38,7 +38,7 @@ class LessonsController < ApplicationController
   def find_lesson
     @lesson = Lesson.find(params[:id])
   end
-
+  
   def find_modul
     @modul = Modul.find(params[:modul_id])
   end
