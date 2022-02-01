@@ -42,4 +42,4 @@ yarn-debug.log*
 public/assets
 
 # Ingore pdf file
-app/assets/images/pdf/example.pdf
+/app/assets/images/pdf/example.pdf
