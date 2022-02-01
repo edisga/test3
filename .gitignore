@@ -40,3 +40,6 @@ yarn-debug.log*
 *.swp
 .DS_Store
 public/assets
+
+# Ingore pdf file
+app/assets/images/pdf/example.pdf
