@@ -14,7 +14,8 @@ class TestsController < ApplicationController
   end
 
   def show
-    @questions = @test.questions
+    @questions
+    
   end
 
   private
