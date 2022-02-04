@@ -2,7 +2,7 @@
   <%= f.input :title, label: 'Título de la pregunta' %>
   <%= f.input :state, label: 'Provincia' %>
   <%= f.input :year, label: 'Año' %>
-  <%= f.association :lesson, as: :radio_buttons, collection: @modul.lessons %>
+  <%= f.association :lesson, as: :radio_buttons, collection: @modul.lessons, label: 'Selecciona lección' %>
   <%= f.simple_fields_for :answers do |p| %>
     <%= p.input :answer, label: 'Respuesta' %>
     <%= p.input :correct_answer, laber: 'Correcta' %>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:export-ydpi="6.7801151"
+   inkscape:export-xdpi="6.7801151"
+   inkscape:export-filename="C:\Users\jesse\Downloads\Atar Cabos\icon_120h.png"
+   sodipodi:docname="logo.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   id="svg1318"
+   version="1.1"
+   viewBox="0 0 726.90136 334.6557"
+   height="334.6557mm"
+   width="726.90137mm">
+  <title
+     id="title1976">Atar Cabos</title>
+  <defs
+     id="defs1312">
+    <rect
+       id="rect997-8-9-7"
+       height="304.74481"
+       width="1281.0231"
+       y="7268.0142"
+       x="1330.5345" />
+    <rect
+       id="rect1899"
+       height="304.74481"
+       width="1281.0231"
+       y="7268.0142"
+       x="1330.5345" />
+  </defs>
+  <sodipodi:namedview
+     inkscape:window-maximized="1"
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:window-height="1121"
+     inkscape:window-width="1920"
+     lock-margins="true"
+     fit-margin-bottom="60"
+     fit-margin-right="60"
+     fit-margin-left="60"
+     fit-margin-top="60"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="786.79477"
+     inkscape:cx="1625.4723"
+     inkscape:zoom="0.24633152"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <metadata
+     id="metadata1315">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Atar Cabos</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(304.02848,242.4416)"
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <path
+       id="rect870-4-0-1-3-7-6-2-7-0-2-7-6"
+       style="opacity:0.992117;fill:#0a4c7e;fill-opacity:1;stroke:#0a4c7e;stroke-width:12;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 32.125144,-12.944296 c 0,0 -71.42448,2.6462 -101.50448,19.4384004 -21.76321,12.1493996 -94.175414,19.0717996 -97.355314,19.4299996 -4.494,0.4931 -3.94279,0.7512 -5.0016,-3.0611 l -4.7303,-19.7779996 -4.4044,-17.8755004 c -0.7654,-3.5488 1.3436,-4.6016 3.6764,-5.2431 2.3328,-0.6415 76.31401,-8.9355 96.649614,-19.1674 30.77379,-15.484 101.5044,-19.4385 101.5044,-19.4385 z"
+       sodipodi:nodetypes="cscccczssc" />
+    <path
+       sodipodi:nodetypes="ccccccc"
+       d="M 346.64197,-55.661596 H 59.422154 V -102.70109 H 354.63207 c 2.40768,-0.068 2.48549,-0.1241 1.88258,3.291993 -1.35509,7.839901 -5.85549,33.905901 -7.2105,41.745801 -0.2757,1.5287 -0.61648,2.0133 -2.66218,2.0017 z"
+       style="opacity:0.992117;fill:#0a4c7e;fill-opacity:1;stroke:#0a4c7e;stroke-width:12;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect870-4-1-8-7-6-1-0-8-0-0" />
+    <path
+       id="rect870-4-1-8-7-6-1-0-8-3-7-9"
+       style="opacity:0.992117;fill:#ffffff;fill-opacity:1;stroke:#0a4c7e;stroke-width:12;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -227.79754,-102.70109 H 59.422154 v 47.039494 H -235.78764 c -2.4077,0.068 -2.4855,0.1241 -1.8826,-3.292 1.3551,-7.8399 5.8555,-33.905899 7.2105,-41.745794 0.2757,-1.52871 0.6165,-2.01331 2.6622,-2.0017 z"
+       sodipodi:nodetypes="ccccccc" />
+    <path
+       style="fill:#0a4c7e;fill-opacity:0.992157;stroke:#0b4d7f;stroke-width:12;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 59.422154,-55.661596 -30.73469,-12.0952 c -22.4178995,0.2142 -21.5237195,34.1378 -37.0417095,47.8257 0,0 -17.4231905,14.8539004 -31.3719905,16.6310004 8.85959,11.0723 13.52909,13.3148996 31.7500005,15.2486996 29.2740995,1.7739 65.9914995,-38.3162 67.3983895,-67.6102 z"
+       id="path1001-3-0-0-88-8-0-9-6"
+       sodipodi:nodetypes="ccsccc" />
+    <path
+       sodipodi:nodetypes="cscccczssc"
+       d="m 76.906274,-137.28319 c 0,0 69.686776,-6.23161 101.504476,-19.43841 22.67562,-9.4122 94.1754,-19.0718 97.35532,-19.43 4.494,-0.4931 3.94279,-0.7512 5.00158,3.0611 l 4.7303,19.778 4.40441,17.8755 c 0.76539,3.5488 -1.34361,4.6016 -3.67641,5.2431 -2.33278,0.6415 -74.8601,8.204 -96.64959,19.1674 -30.7738,15.483905 -101.504406,19.438503 -101.504406,19.438503 z"
+       style="opacity:0.992117;fill:#ffffff;fill-opacity:1;stroke:#0a4c7e;stroke-width:12;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect870-4-0-1-3-7-6-2-7-0-1-0" />
+    <path
+       sodipodi:nodetypes="ccsccc"
+       id="path1001-6-1-9-3-7-6-4-4-3"
+       d="m 54.771254,-102.701 30.73472,12.095205 c 22.417876,-0.214302 21.523686,-34.137905 37.041586,-47.825705 0,0 17.42328,-14.854 31.37209,-16.631 -8.8597,-11.0723 -13.5291,-13.3149 -31.75,-15.2488 -29.274076,-1.7738 -65.991496,38.3163 -67.398396,67.6103 z"
+       style="fill:#ffffff;fill-opacity:1;stroke:#0b4d7f;stroke-width:12;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:#0a4c7e;stroke-width:12;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.992157"
+       d="m 199.23677,-55.661596 c 0.18838,26.514 -20.7051,57.1077004 -47.0395,60.1951004 -45.13551,5.2917 -63.699016,-46.2238004 -85.322406,-76.7292004 -21.6235,-30.505304 -30.88521,-48.998904 -48.38981,-64.955404 0,0 13.8552,-37.7011 40.50041,-22.1865 23.9064,13.9198 41.534176,43.42311 48.666286,56.6366 14.26411,26.427004 31.37202,47.039404 31.37202,47.039404 z"
+       id="path902-8-9-9-5-9-2-9-9"
+       sodipodi:nodetypes="cszcsscc" />
+    <path
+       sodipodi:nodetypes="cszcsscc"
+       id="path902-2-2-2-4-1-1-0-9-9"
+       d="m -80.720146,-102.701 c -0.1885,-26.514 20.70511,-57.1077 47.0394,-60.1951 45.13561,-5.2917 68.99071,46.6018 90.61421,77.107105 21.62349,30.505399 30.12918,48.998999 43.097996,66.467399 0,0 -13.855086,35.8112 -40.500396,20.29660044 C 35.624764,-12.944796 17.996954,-42.448096 10.864874,-55.661596 -3.3992355,-82.088596 -20.507146,-102.701 -20.507146,-102.701 Z"
+       style="fill:#0a4c7e;fill-opacity:0.992157;stroke:#0a4c7e;stroke-width:12;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.992157" />
+  </g>
+</svg>
