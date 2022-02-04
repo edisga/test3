@@ -9,17 +9,19 @@ Question.destroy_all
 Section.destroy_all
 Teacher.destroy_all
 User.destroy_all
+Element.destroy_all
+LessonDone.destroy_all
 puts "DB cleanded!"
 
 puts "Creating new DB!"
 puts "Creating user..."
 
-user = User.new(
+@user = User.new(
   email: "joseluis@gmail.com",
   password: "Unmomentojavi"
 )
-user.save!
-puts "#{user.email} created!"
+@user.save!
+puts "#{@user.email} created!"
 
 puts "Creating Teacher..."
 
@@ -74,6 +76,14 @@ courses.each do |course_title|
       )
       lesson.save!
       puts "#{lesson.title} created!"
+      
+      # ADD USER DONE LESSONS
+      done = [false, true].sample
+      if done == true
+        lesson_done = LessonDone.new(lesson: lesson, user: @user, done: true)
+        lesson_done.save!
+        puts "Lesson Done"
+      end
 
       puts "Adding sections..."
       8.times do
@@ -84,6 +94,18 @@ courses.each do |course_title|
           lesson: lesson
         )
         section.save!
+
+        puts "Adding elements..."
+        num = 1
+        2.times do 
+          element = Element.new(
+            element_type: "paragraph",
+            section: section,
+            position: num,
+            video: "Video"
+          )
+          num += 1
+        end
       end
 
       puts "Adding questions..."

@@ -53,3 +53,17 @@
   border-radius: $border;
   margin-bottom: 5vh;
 }
+
+.image {
+  text-align: center;
+  img {
+    max-width: 100%;
+  }
+}
+
+.video {
+  text-align: center;
+  img {
+    max-width: 100%;
+  }
+}

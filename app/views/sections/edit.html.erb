@@ -39,7 +39,7 @@
           <% @section.elements.each do |element| %>
             <% if element.persisted? %>
               <% if element.paragraph? %>
-                <div class="mb-3 p-3 paragraph">4git 
+                <div class="mb-3 p-3 paragraph"> 
                   <div class="paragraph-content">
                     <% if element.content.present?%>
                       <%= element.content %>
@@ -50,23 +50,27 @@
                   <div class="paragraph-form d-none">
                     <%= form_with(model: [@course, @modul, @lesson, @section, element]) do |f| %>
                       <%= f.rich_text_area :content %>
-                      <div class="mt-3">
-                        <%= f.submit "Guardar", class: "btn btn-primary" %>
-                        <a href="#" class="cancel btn btn-secondary">Cancelar</a>
+                      <div class="mt-3 d-flex justify-content-between">
+                        <div>
+                          <%= f.submit "Guardar", class: "btn btn-primary" %>
+                          <a href="#" class="cancel btn btn-secondary">Cancelar</a>
+                        </div>
+                        <%= link_to course_modul_lesson_section_element_path(@course, @modul, @lesson, @section, element), method: :delete, class: 'delete-btn btn btn-danger float-right', data: { confirm: "¿Seguro que deseas eliminar el texto?" } do %>
+                          <i class='fas fa-times'></i>
+                        <% end %>
                       </div>
-                      <%= link_to course_modul_lesson_section_element_path(@course, @modul, @lesson, @section, element), method: :delete, class: 'delete-btn btn btn-dark mt-2 float-right', data: { confirm: "¿Deseas eliminar el texto?" } do %>
-                        <i class='fas fa-times'></i>
-                      <% end %>
                     <% end %>
                   </div>
                 </div>
               <% elsif element.image? %>
                 <div class="mb-4 p-3 image">
                   <% if element.image.present? %>
-                    <%= link_to course_modul_lesson_section_element_path(@course, @modul, @lesson, @section, element), method: :delete, class: 'delete-btn btn btn-dark mt-2 float-right', data: { confirm: "¿Deseas eliminar la imágen?" } do %>
+                    <div>
+                      <%= image_tag(element.image) %>
+                    </div>
+                    <%= link_to course_modul_lesson_section_element_path(@course, @modul, @lesson, @section, element), method: :delete, class: 'delete-btn btn btn-danger float-right', data: { confirm: "¿Seguro que deseas eliminar la imágen?" } do %>
                       <i class='fas fa-times'></i>
                     <% end %>
-                    <%= image_tag(element.image) %>
                   <% else %>
                     <%= form_with(model: [@course, @modul, @lesson, @section, element]) do |form| %>
                       <%= form.file_field :image %>
@@ -80,10 +84,12 @@
               <% else element.video? %>
                 <div class="mb-4 p-3 video">
                   <% if element.video.present? %>
+                    <div>
+                      <%= element.video.html_safe %>
+                    </div>
                     <%= link_to course_modul_lesson_section_element_path(@course, @modul, @lesson, @section, element), method: :delete, class: 'delete-btn btn btn-dark mt-2 float-right', data: { confirm: "¿Deseas eliminar la imágen?" } do %>
                       <i class='fas fa-times'></i>
                     <% end %>
-                    <%= element.video.html_safe %>
                   <% else %>
                     <%= form_with(model: [@course, @modul, @lesson, @section, element]) do |form| %>
                       <%= form.text_area :video %>
