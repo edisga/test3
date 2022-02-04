@@ -7,24 +7,22 @@ class TestsController < ApplicationController
   
   def create
     @test = Test.new
-    @test.teacher = current_teacher
     if @test.save
       redirect_to test_path(@test)
     end
   end
 
   def show
-    @questions
-    
+    @test.questions(current_user)
   end
 
   private
 
   # def test_params 
-  #   params.require(:test).permit(params[:id])
+  #   params.require(:test).permit(params[:user])
   # end
 
   def find_test
-    @test = params.find(params[:id])
+    @test = Test.find(params[:id])
   end
 end

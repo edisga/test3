@@ -1,6 +1,7 @@
 <% @questions.each do |question| %>
-<%= simple_form_for [question] do |f| %>
-  <%= f.label :title %>
-  <%= f.association :answer, as: :radio_buttons, collection: question.answers %>
-  <%= f.button :submit, class: "btn btn-primary" %>
+  <%= simple_form_for [question] do |f| %>
+    <%= f.label :title %>
+    <%= f.association :answer, as: :radio_buttons, collection: question.answers %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
 <% end %>

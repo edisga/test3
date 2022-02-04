@@ -1,12 +1,10 @@
 class Test < ApplicationRecord
   has_many :question
   has_one :teacher
-    
+  has_one :user  
 
-  def questions
-    @user = current_user
-    @lessons_done = LessonDone.where(user: current_user)
-    @questions = @lessons_done.select.first(2).questions
+  def questions(user)
+    
   end
-  
+
 end
