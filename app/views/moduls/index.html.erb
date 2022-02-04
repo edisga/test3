@@ -18,15 +18,19 @@
 
   <%= render 'form_lessons', modul: modul %>
 
-  <%# This line is to open document in a new tab %>
-  <!--
-  <%= link_to modul.upload_document, target: :_blank do %>
-    <%= image_tag "icons/download_document.png" %>
-  <% end %>
-  -->
-  <%# THis line is to download document when you click it %>
-  <%= link_to rails_blob_path(modul.upload_document, disposition: :attachment) do %>
-    <%= image_tag "icons/download_document.png" %>
+  <% if modul.upload_document.attached? %>
+    <%# This line is to open document in a new tab %>
+    <!--
+    <%= link_to modul.upload_document, target: :_blank do %>
+      <%= image_tag "icons/download_document.png" %>
+    <% end %>
+    -->
+    <%# THis line is to download document when you click it %>
+    <%= link_to rails_blob_path(modul.upload_document, disposition: :attachment) do %>
+      <%= image_tag "icons/download_document.png" %>
+    <% end %>
+  <% else %>
+    <p>No hay ningún documento descargable</p>
   <% end %>
 
   <% modul.lessons.each do |lesson| %>
