@@ -1,2 +1,62 @@
-<h1>Editar curso</h1>
-<%= render "form", course: @course %>
+<div class="max-1200">
+  <h1>Editar curso</h1>
+      <%= link_to 'Back', course_moduls_path(@course), class: 'btn btn-dark mb-3' %>
+  <div class="row">
+    <div class="col-md-4">
+      <%= render "form", course: @course %>
+    </div>
+    <div class="col-md-8">
+      <div class="course-feature">
+        <%= link_to "Añadir Característica", new_course_feature_path(@course), class: 'btn btn-primary' %>
+        <% if @course.features.empty? %>
+          <p><%= @course.title %> no tiene ninguna característica.</p>
+        <% else %>
+          <div class="feature-list">
+            <% @features.each do |feature| %>
+              <div class="feature-card d-flex">
+                <image class="feature-image" src="<%= (url_for(feature.image)) %>">
+                <div>
+                  <h5><%= feature.title %></h5>
+                  <p><%= feature.description %></p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="course-atributions">
+        <%= link_to "Añadir atribuciones", new_course_atribution_path(@course), class: 'btn btn-primary' %>
+        <% if @course.atributions.empty? %>
+          <p><%= @course.title %> no tiene ningún atributo.</p>
+        <% else %>
+          <div class="atributions-list">
+            <% @atributions.each do |atribution| %>
+              <div class="atribution-card d-flex">
+                <image class="atribution-image" src="<%= (url_for(atribution.image)) %>">
+                <div>
+                  <h5><%= atribution.title %></h5>
+                  <p><%= atribution.description %></p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="course-requirements">
+        <%= link_to "Añadir Requisitos", new_course_requirement_path(@course), class: 'btn btn-primary' %>
+        <% if @course.requirements.empty? %>
+          <p><%= @course.title %> no tiene ningún requerimiento.</p>
+        <% else %>
+          <div class="requirements-list">
+            <% @requirements.each do |requirement| %>
+              <div class="requirement-card">
+                <h5><%= requirement.title %></h5>
+                <p><%= requirement.description %></p>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

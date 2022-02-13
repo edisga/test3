@@ -100,9 +100,14 @@
   }
 
   .faq-accordion-item {
-    border-bottom: solid 1px $gray;
     padding: 8px 0 16px;
   }
+
+  .faq-accordion-item-border {
+    padding: 8px 0 16px;
+    border-bottom: solid 1px $gray;
+  }
+
   .question {
     align-items: center;
     padding: 1.5vh;

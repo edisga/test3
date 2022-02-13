@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_04_185201) do
+ActiveRecord::Schema.define(version: 2022_02_13_161908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,15 @@ ActiveRecord::Schema.define(version: 2022_02_04_185201) do
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
+  create_table "atributions", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.bigint "course_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["course_id"], name: "index_atributions_on_course_id"
+  end
+
   create_table "courses", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -75,6 +84,15 @@ ActiveRecord::Schema.define(version: 2022_02_04_185201) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "video"
     t.index ["section_id"], name: "index_elements_on_section_id"
+  end
+
+  create_table "features", force: :cascade do |t|
+    t.string "description"
+    t.bigint "course_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "icon"
+    t.index ["course_id"], name: "index_features_on_course_id"
   end
 
   create_table "lesson_dones", force: :cascade do |t|
@@ -126,6 +144,32 @@ ActiveRecord::Schema.define(version: 2022_02_04_185201) do
     t.index ["lesson_id"], name: "index_questions_on_lesson_id"
   end
 
+  create_table "quizzes", force: :cascade do |t|
+    t.float "score", default: 0.0
+    t.integer "selected_answer_ids", array: true
+    t.boolean "is_submitted", default: false
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_quizzes_on_user_id"
+  end
+
+  create_table "quizzes_questions", force: :cascade do |t|
+    t.bigint "quiz_id"
+    t.bigint "question_id"
+    t.index ["question_id"], name: "index_quizzes_questions_on_question_id"
+    t.index ["quiz_id"], name: "index_quizzes_questions_on_quiz_id"
+  end
+
+  create_table "requirements", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.bigint "course_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["course_id"], name: "index_requirements_on_course_id"
+  end
+
   create_table "sections", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -167,6 +211,9 @@ ActiveRecord::Schema.define(version: 2022_02_04_185201) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "last_name"
+    t.string "description"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -178,8 +225,19 @@ ActiveRecord::Schema.define(version: 2022_02_04_185201) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "users_lessons", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "lesson_id"
+    t.boolean "is_completed", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["lesson_id"], name: "index_users_lessons_on_lesson_id"
+    t.index ["user_id"], name: "index_users_lessons_on_user_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "answers", "questions"
+  add_foreign_key "atributions", "courses"
   add_foreign_key "courses", "teachers"
   add_foreign_key "elements", "sections"
   add_foreign_key "lesson_dones", "lessons"
@@ -188,5 +246,6 @@ ActiveRecord::Schema.define(version: 2022_02_04_185201) do
   add_foreign_key "paid_courses", "courses"
   add_foreign_key "paid_courses", "users"
   add_foreign_key "questions", "lessons"
+  add_foreign_key "requirements", "courses"
   add_foreign_key "sections", "lessons"
 end
