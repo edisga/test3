@@ -1,9 +1,6 @@
 // HEADER
-.home-page-header {
-  background-image: image-url('backgrounds_images/bg-boat.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
+.home-page {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.2)0%,rgba(0,0,0,0.2)50%), image-url('backgrounds_images/bg-boat.png');
   height: calc(100vh - 70px - 100px);
 
   .max-1200 {
@@ -100,9 +97,14 @@
   }
 
   .faq-accordion-item {
-    border-bottom: solid 1px $gray;
     padding: 8px 0 16px;
   }
+
+  .faq-accordion-item-border {
+    padding: 8px 0 16px;
+    border-bottom: solid 1px $gray;
+  }
+
   .question {
     align-items: center;
     padding: 1.5vh;

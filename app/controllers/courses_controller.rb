@@ -9,19 +9,24 @@ class CoursesController < ApplicationController
   
   def new
     @course = Course.new
+    @requirement = @course.requirements.build
+    @atribution = @course.atributions.build
   end
 
   def create
     @course = Course.new(course_params)
     @course.teacher = current_teacher
     if @course.save
-      redirect_to course_moduls_path(@course), notice: 'Curso creado correctamente'
+      redirect_to edit_course_path(@course), notice: 'Curso creado correctamente'
     else
       render 'new', notice: 'Se ha producido un error'
     end
   end
   
   def edit
+    @atributions = @course.atributions
+    @requirements = @course.requirements
+    @features = @course.features
   end
   
   def update
@@ -34,7 +39,8 @@ class CoursesController < ApplicationController
   end
   
   def show
-    @course = Course.find(params[:id])
+    @atributions = @course.atributions
+    @requirements = @course.requirements
   end
   
   def destroy
@@ -52,6 +58,6 @@ class CoursesController < ApplicationController
   end
 
   def course_params
-    params.require(:course).permit(:title, :description, :duration, :price, :abbreviation)
+    params.require(:course).permit(:title, :description, :duration, :price, :abbreviation, :image)
   end
 end

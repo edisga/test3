@@ -27,6 +27,11 @@ Rails.application.routes.draw do
         resources :answers, except: [:index, :show, :new, :edit]
       end
     end
+
+    resources :atributions, except: [:index, :show]
+    resources :requirements, except: [:index, :show]
+    resources :features, except: [:index, :show]
+
   end
 
   resources :tests, only: [:new, :create, :show]

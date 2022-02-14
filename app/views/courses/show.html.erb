@@ -1,9 +1,73 @@
-<h1><%= @course.title %></h1>
+<%# TODO:  Añadir filtro a la imágen %>
+<div class="banner course-page" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.2)0%,rgba(0,0,0,0.2)50%), url(<%= rails_blob_url(@course.image) %>)">
+  <div class="max-1200">
+    <div class="back-button">
+      <%= link_to "Volver", root_path %>
+    </div>
+    <div class="header-text">
+      <div class="row">
+        <div class="col-9">
+          <h1><%= @course.title %></h1>
+          <p>El mar tiene mucho que ofrecerte. ¡Empieza tu aventura hoy!</p>
+          <button type="button" class="btn btn-primary"><%= link_to  "Empezar hoy" %></button>
+        </div>
+        <div class="col-3">
+          <p class="course-price"><%= @course.price.to_i %>€</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="pass-garantee">
+  <div class="max-1200">
+    <div class="pass-garantee-content">
+      <div class="d-flex">
+      <%= inline_svg_tag('icons/test-icon.svg', aria: true, title: 'Diploma',) %>
+      <div>
+        <p class="pass-garantee-header">Garantía de aprobado de Atar Cabos</p>
+        <p class="pass-garantee-description">Los cursos de Atar Cabos incluyen una garantía de aprobado. Si no apruebas a la primera, Atar Cabos te regala el siguiente curso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="max-1200">
+  <section class="course-description"> 
+    <h2>Descripción</h2>
+    <%= @course.description %>
+  </section>
+  <section class="course-atributions">
+    <h2>Atribuciones</h2>
+    <div class="row">
+      <% @atributions.each do |atribution| %>
+        <div class="col-12 col-md-6">
+          <div class="atribution-card">
+            <%= image_tag atribution.image %>
+            <div>
+              <h4><%= atribution.title %></h4>
+              <p><%= atribution.description %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </section>
+</div>
+<section class="course-requirements">
+  <div class="max-1200">
+    <h2>Requisitos</h2>
+    <div class="row">
+      <% @requirements.each do |requirement| %>
+        <div class="col-12 col-md-6">
+          <div class="requirement-card">
+            <i class="fas fa-check-circle"></i>
+            <div class="card-requirement-content">
+              <h4><%= requirement.title %></h4>
+              <p><%= requirement.description %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
 
-<%= link_to "Volver al listado", courses_path %>
-
-<p><%= @course.description %></p>
-
-<%= link_to "Ver modulos", course_moduls_path(@course) %>
-
-<h4>Teacher: <%= @course.teacher.name %></h4>

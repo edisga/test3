@@ -1,2 +1,78 @@
-<h1>Editar curso</h1>
-<%= render "form", course: @course %>
+<div class="max-1200">
+  <h1>Editar curso</h1>
+      <%= link_to 'Back', course_moduls_path(@course), class: 'btn btn-dark mb-3' %>
+  <div class="row">
+    <div class="col-md-4">
+      <%= render "form", course: @course %>
+    </div>
+    <div class="col-md-8">
+      <h3>Característica</h3>
+      <div class="course-feature">
+        <%= link_to "Añadir Característica", new_course_feature_path(@course), class: 'btn btn-primary' %>
+        <% if @course.features.empty? %>
+          <p><%= @course.title %> no tiene ninguna característica.</p>
+        <% else %>
+          <div class="feature-list mt-3 mb-3">
+            <% @features.each do |feature| %>
+              <%= link_to edit_course_feature_path(@course, feature) do %>
+                <div class="feature-card">
+                  <div class="d-flex justify-content-between">
+                    <p><%= feature.icon %><%= feature.description %></p>
+                    <%= link_to course_feature_path(@course, feature), method: :delete do %><p> Eliminar</p><% end %>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <h3>Atributos</h3>
+      <div class="course-atributions mt-3">
+        <%= link_to "Añadir atribuciones", new_course_atribution_path(@course), class: 'btn btn-primary' %>
+        <% if @course.atributions.empty? %>
+          <p><%= @course.title %> no tiene ningún atributo.</p>
+        <% else %>
+          <div class="atributions-list mt-3 mb-3">
+            <% @atributions.each do |atribution| %>
+              <div class="d-flex justify-content-between">
+                <div class="atribution-card d-flex">
+                  <image class="atribution-image" src="<%= (url_for(atribution.image)) %>">
+                  <div>
+                    <h5><%= atribution.title %></h5>
+                    <p><%= atribution.description %></p>
+                  </div>
+                </div>
+                <div class="d-flex">
+                  <%= link_to edit_course_atribution_path(@course, atribution) do %><p class="mr-2"> Editar</p><% end %>
+                  <%= link_to course_atribution_path(@course, atribution), method: :delete do %><p> Eliminar</p><% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <h3>Requisitos</h3>
+      <div class="course-requirements mt-3">
+        <%= link_to "Añadir Requisitos", new_course_requirement_path(@course), class: 'btn btn-primary' %>
+        <% if @course.requirements.empty? %>
+          <p><%= @course.title %> no tiene ningún requerimiento.</p>
+        <% else %>
+          <div class="requirements-list mt-3">
+            <% @requirements.each do |requirement| %>
+              <div class="requirement-card d-flex justify-content-between">
+                <div>
+                  <h5><%= requirement.title %></h5>
+                  <p><%= requirement.description %></p>
+                </div>
+                <div class="d-flex">
+                  <%= link_to edit_course_requirement_path(@course, requirement) do %><p class="mr-2"> Editar</p><% end %>
+                  <%= link_to course_requirement_path(@course, requirement), method: :delete do %><p> Eliminar</p><% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

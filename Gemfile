@@ -63,3 +63,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Faker gem
 gem 'faker'
+
+# Render SVG
+gem 'inline_svg'

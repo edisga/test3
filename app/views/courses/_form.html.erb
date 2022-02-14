@@ -1,8 +1,9 @@
 <%= simple_form_for course do |f| %>
-<%= f.input :title, label: 'Título del curso' %>
-<%= f.input :abbreviation, label: 'Siglas del curso', placeholder: 'Ex: P.E.R.', input_html: { maxlength: 15 } %>
-<%= f.input :description, label: 'Descripción' %>
-<%= f.input :duration, label: 'Duración del curso (en meses)' %>
-<%= f.input :price, label: 'Precio' %>
-<%= f.button :submit, class: 'btn btn-primary' %>
+  <%= f.input :title, label: 'Título del curso' %>
+  <%= f.input :abbreviation, label: 'Siglas del curso', placeholder: 'Ex: P.E.R.', input_html: { maxlength: 15 } %>
+  <%= f.rich_text_area :description, label: 'Descripción' %>
+  <%= f.input :duration, label: 'Duración del curso (en meses)' %>
+  <%= f.input :price, label: 'Precio' %>
+  <%= f.input :image, as: :file %>
+  <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>

@@ -1,0 +1,65 @@
+.course-page {
+  height: 60vh;
+  position: relative;
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  .header-text {
+    max-width: 900px;
+    padding: 25px;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    -ms-transform: translate(50%, -50%); /* for IE 9 */
+    -webkit-transform: translate(50%, -50%); /* for Safari */
+  }
+
+  .course-price {
+    font-size: 4rem;
+    font-weight: 700;
+    color: white;
+    margin: auto;
+  }
+}
+
+.pass-garantee {
+  background-color: $light-green;
+  padding: 15px;
+
+  .pass-garantee-content {
+    margin: auto;
+    width: 80%;
+  }
+
+  .pass-garantee-header {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+  }
+}
+
+.course-description, .course-atributions, .course-requirements {
+  padding: 6vh;
+
+  h2 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .course-description, .course-atributions, .course-requirements {
+    padding: 3vh;
+  }
+
+  .course-requirements {
+    margin-top: 0;
+  }
+}
+
+.course-requirements {
+  margin-top: 3vh;
+  background-color: $light-blue;
+}
