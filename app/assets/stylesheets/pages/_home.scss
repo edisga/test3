@@ -61,6 +61,15 @@
   justify-content: center;
 }
 
+// PASS GARANTEE
+.our-courses {
+  .pass-garantee {
+    max-width: 800px;
+    margin: auto;
+    border-radius: 10px;
+  }
+}
+
 // STUDENTS SAY
 .our-students-say {
   background-color: $light-blue;

@@ -29,7 +29,7 @@
   <div class="row">
     <div class="col-12 col-md-3">
       <div class="our-methodology-content">
-        <%= inline_svg_tag('icons/film-icon.svg', aria: true, title: 'Video') %>
+        <%= image_tag('icons/movie-icon.svg', size: "60x60", alt: "Icono de cámara de vídeo", class: "mb-2")  %>
         <h4>Vídeos de 5 minutos</h4>
         <p>Sabemos que te distraes fácilmente, así que hemos preparado vídeos de 5 minutos para que entiendas los conceptos de navegación sin despistarte.</p>
       </div>
@@ -37,7 +37,7 @@
     <div class="col d-flex align-items-center justify-content-center"><i class="fas fa-plus"></i></div>
     <div class="col-12 col-md-4">
       <div class="our-methodology-content">
-        <%= inline_svg_tag('icons/test-icon.svg', aria: true, title: 'Test') %>
+        <%= image_tag('icons/calendar-icon.svg', size: "60x60", alt: "Icono de calendario", class: "mb-2") %>
         <h4>Un test diferente cada día</h4>
         <p>Hemos diseñado una nueva metodología donde personalizamos tu test diariamente, adaptándolo a lo que has aprendido hasta ese día. Así, cada día tendrás un test diferente, de conceptos nuevos + todos los temas que ya has estudiado.</p>
       </div>
@@ -45,7 +45,7 @@
     <div class="col d-flex align-items-center justify-content-center"><i class="fas fa-plus"></i></div>
     <div class="col-12 col-md-3">
       <div class="our-methodology-content">
-       <%= image_tag "icons/exam_icon.svg", :alt => "Comillas" %>
+        <%= image_tag('icons/exam-icon.svg', size: "60x60", alt: "Icono de examen test", class: "mb-2") %>
         <h4>Exámenes reales</h4>
         <p>Exámenes oficiales ordenados por Comunidades Autónomas, que puedes rellenar y corregir online.</p>
       </div>
@@ -72,6 +72,17 @@
         </div>
       </div>
     <% end %>
+  </div>
+  <div class="pass-garantee">
+    <div class="pass-garantee-content">
+      <div class="d-flex align-items-center">
+        <%= image_tag('icons/diploma.svg', size: "100x100", alt: "Icono de diploma", class: "mr-3") %>
+        <div>
+          <p class="pass-garantee-header">Garantía de aprobado de Atar Cabos</p>
+          <p class="pass-garantee-description">Los cursos de Atar Cabos incluyen una garantía de aprobado. Si no apruebas a la primera, Atar Cabos te regala el siguiente curso.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 <section class="our-students-say">

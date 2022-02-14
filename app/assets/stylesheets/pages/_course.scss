@@ -31,12 +31,17 @@
 
   .pass-garantee-content {
     margin: auto;
-    width: 80%;
+    width: 90%;
+    max-width: 800px;
   }
 
   .pass-garantee-header {
     font-size: 1.1rem;
     font-weight: 600;
+    margin: 0;
+  }
+
+  .pass-garantee-description {
     margin: 0;
   }
 }
