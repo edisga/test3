@@ -1,0 +1,32 @@
+
+// Atribution card design
+.atribution-card {
+  display: flex;
+  margin: 5px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 8px;
+
+  img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+  }
+}
+
+.requirement-card {
+  display: flex;
+  padding: 15PX 40px;
+
+  i {
+    margin-right: 15px;
+    color: $dark-blue;
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .requirement-card {
+    padding: 10px 25px;
+  }
+}

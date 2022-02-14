@@ -1,6 +1,6 @@
 class RequirementsController < ApplicationController
   before_action :find_course
-  before_action :find_requirement, only: [:update, :delete]
+  before_action :find_requirement, only: [:edit, :update, :destroy]
 
   def new
     @requirement = Requirement.new
@@ -14,6 +14,9 @@ class RequirementsController < ApplicationController
     else
       redirect_to edit_course_path(@course), notice: "Se ha producido un error"
     end
+  end
+
+  def edit
   end
 
   def update
@@ -39,7 +42,7 @@ class RequirementsController < ApplicationController
   end
 
   def find_requirement
-    @requirement = requirement.find(params[:id])
+    @requirement = Requirement.find(params[:id])
   end
 
   def requirement_params

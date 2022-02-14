@@ -26,6 +26,7 @@ class CoursesController < ApplicationController
   def edit
     @atributions = @course.atributions
     @requirements = @course.requirements
+    @features = @course.features
   end
   
   def update
@@ -38,7 +39,8 @@ class CoursesController < ApplicationController
   end
   
   def show
-    @course = Course.find(params[:id])
+    @atributions = @course.atributions
+    @requirements = @course.requirements
   end
   
   def destroy

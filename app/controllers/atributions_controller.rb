@@ -1,6 +1,6 @@
 class AtributionsController < ApplicationController
   before_action :find_course
-  before_action :find_atribution, only: [:update, :delete]
+  before_action :find_atribution, only: [:edit, :update, :destroy]
 
   def new
     @atribution = Atribution.new
@@ -14,6 +14,9 @@ class AtributionsController < ApplicationController
     else
       redirect_to edit_course_path(@course), notice: "Se ha producido un error"
     end
+  end
+
+  def edit
   end
 
   def update

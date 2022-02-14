@@ -1,4 +1,4 @@
-<header class="home-page-header">
+<header class="banner home-page">
   <div class="max-1200">
     <div class="header-text">
       <h1>No te pierdas todo lo que el mar puede ofrecerte</h1>
@@ -29,7 +29,7 @@
   <div class="row">
     <div class="col-12 col-md-3">
       <div class="our-methodology-content">
-        <%= image_tag "icons/film-icon.svg", size: "50x50", :alt => "Vídeo" %>
+        <%= inline_svg_tag('icons/film-icon.svg', aria: true, title: 'Video') %>
         <h4>Vídeos de 5 minutos</h4>
         <p>Sabemos que te distraes fácilmente, así que hemos preparado vídeos de 5 minutos para que entiendas los conceptos de navegación sin despistarte.</p>
       </div>
@@ -37,7 +37,7 @@
     <div class="col d-flex align-items-center justify-content-center"><i class="fas fa-plus"></i></div>
     <div class="col-12 col-md-4">
       <div class="our-methodology-content">
-        <%= image_tag "icons/test-icon.svg", size: "50x50", :alt => "Test" %>
+        <%= inline_svg_tag('icons/test-icon.svg', aria: true, title: 'Test') %>
         <h4>Un test diferente cada día</h4>
         <p>Hemos diseñado una nueva metodología donde personalizamos tu test diariamente, adaptándolo a lo que has aprendido hasta ese día. Así, cada día tendrás un test diferente, de conceptos nuevos + todos los temas que ya has estudiado.</p>
       </div>
@@ -45,7 +45,7 @@
     <div class="col d-flex align-items-center justify-content-center"><i class="fas fa-plus"></i></div>
     <div class="col-12 col-md-3">
       <div class="our-methodology-content">
-        <%= image_tag "icons/exam-icon.svg", size: "50x50", :alt => "Exam" %>
+       <%= image_tag "icons/exam_icon.svg", :alt => "Comillas" %>
         <h4>Exámenes reales</h4>
         <p>Exámenes oficiales ordenados por Comunidades Autónomas, que puedes rellenar y corregir online.</p>
       </div>
@@ -67,7 +67,7 @@
             <p><i class="fas fa-ship"></i> Hasta 8 metros de eslora</p>
             <p> Motos náuticas</p>
             <p><i class="fas fa-ruler"></i> Hasta 5 millas de puerto</p>
-            <button type="button" class="btn btn-primary"><%= link_to  "Empieza hoy", "#" %></button>
+            <button type="button" class="btn btn-primary"><%= link_to  "Saber más", course_path(course) %></button>
           </div>
         </div>
       </div>
