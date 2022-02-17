@@ -4,9 +4,21 @@ ENV RAILS_ENV=production
 ENV RAILS_SERVE_STATIC_FILES=true
 ENV BUNDLE_VERSION=2.3.6
 ENV RAILS_LOG_TO_STDOUT=true
-ENV SECRET_KEY_BASE=61dafd4d9d3fd509304022429751a34a45cb1b3b6eac332099be592f7f7ba921386c9c388611224f58bbcff2ca65d3252ba7c08a941a4f495cfb46edd6804932
+ENV SECRET_KEY_BASE=228ff966fab9676f4a211f4b645ae88f
 
 RUN apk add --update build-base nodejs nodejs-npm yarn build-base postgresql-dev tzdata
+
+RUN apk add openssh \
+     && echo "root:Docker!" | chpasswd 
+
+COPY sshd_config /etc/ssh/
+
+RUN mkdir -p /tmp
+COPY ssh_setup.sh init_container.sh /tmp
+RUN chmod +x /tmp/ssh_setup.sh \
+    && (sleep 1;/tmp/ssh_setup.sh 2>&1 > /dev/null)
+
+RUN chmod +x /tmp/init_container.sh
 
 WORKDIR /app
 
@@ -21,7 +33,7 @@ COPY . .
 
 RUN bundle exec rake assets:precompile
 
-EXPOSE 3000
+EXPOSE 3000 2222
 
-CMD [ "rails" , "server" , "-b" , "0.0.0.0" , "-e" , "production", "-p", "3000" ]
-
+#CMD [ "rails" , "server" , "-b" , "0.0.0.0" , "-e" , "production", "-p", "3000" ]
+ENTRYPOINT ["/tmp/init_container.sh"]

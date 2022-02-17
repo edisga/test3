@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: atar_cabos_production
-  username: atar_cabos
-  password: <%= ENV['ATAR_CABOS_DATABASE_PASSWORD'] %>
+  host: <%= ENV['DB_HOST'] %>
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
